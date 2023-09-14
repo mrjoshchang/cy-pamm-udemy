@@ -1,0 +1,5 @@
+node_modules
+cypress.config.ts
+cypress/support/commands.ts
+cypress/support/cypress.d.ts
+cypress/support/e2e.ts

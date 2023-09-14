@@ -1,0 +1,65 @@
+{
+  "name": "cy-pamm",
+  "version": "1.0.0",
+  "description": "Cypress (Page Action Mapping Model)",
+  "main": "index.ts",
+  "scripts": {
+    "DEV": "",
+    "cy:open": "cypress open",
+    "PROD": "",
+    "cy:smoke": "cypress run --browser chrome -C cypress.config.ts -e TAGS=@smoke or not @skip",
+    "cy:linux:wip": "cypress run --browser chrome -C cypress.config.ts -e TAGS='@wip and not @skip'",
+    "cy:linux:regression": "cypress run --browser chrome -C cypress.config.ts -e TAGS='@regression and not @skip'",
+    "cy:win:regression": "cypress run --browser chrome -C cypress.config.ts -e TAGS=@regression and not @skip",
+    "cy:run": "cypress run --browser chrome -C cypress.config.ts",
+    "REPORTING": "",
+    "html-report": "node ./util/cucumber-html-report.js",
+    "combine:reports": "jrm cypress/reports/combined-report.xml \"cypress/reports/*.xml\"",
+    "GIT HOOKS": "& LINTING",
+    "prepare": "cd .. && husky install",
+    "cy:eslint": "npx eslint cypress/**/*.ts",
+    "cy:gherkin-lint": "gherkin-lint -c .gherkin-lintrc",
+    "cy:prettier": "npx prettier --write cypress/**/*.ts",
+    "cy:lint-jobs": "npm run cy:prettier && npm run cy:eslint && npm run cy:gherkin-lint"
+  },
+  "author": "Joshua Chang",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^18.0.5",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "@faker-js/faker": "^8.0.2",
+    "@types/chai-sorted": "^0.2.1",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "chai-sorted": "^0.2.0",
+    "cypress": "^13.1.0",
+    "cypress-real-events": "^1.10.3",
+    "eslint": "^8.48.0",
+    "eslint-config-standard-with-typescript": "^39.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-n": "^16.0.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "gherkin-lint": "^4.2.2",
+    "husky": "^8.0.3",
+    "junit-report-merger": "^6.0.2",
+    "mocha-junit-reporter": "^2.2.1",
+    "multiple-cucumber-html-reporter": "^3.4.0",
+    "prettier": "^3.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "html": {
+      "enabled": true,
+      "output": "cypress/reports/report.html"
+    },
+    "json": {
+      "enabled": false,
+      "output": "cypress/reports/cucumber-report.json"
+    },
+    "pretty": {
+      "enabled": true
+    }
+  }
+}

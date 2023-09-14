@@ -1,0 +1,66 @@
+{
+  "home": {
+    "route": "",
+    "regex": "^/$"
+  },
+  "playground": {
+    "route": "playground",
+    "regex": "^/playground$"
+  },
+  "playground/attributes": {
+    "route": "playground/attributes",
+    "regex": "^/playground/attributes$"
+  },
+  "playground/alerts": {
+    "route": "playground/alerts",
+    "regex": "^/playground/alerts$"
+  },
+  "playground/buttons": {
+    "route": "playground/buttons",
+    "regex": "^/playground/buttons$"
+  },
+  "playground/checkbox": {
+    "route": "playground/checkbox",
+    "regex": "^/playground/checkbox$"
+  },
+  "playground/downloads": {
+    "route": "playground/downloads",
+    "regex": "^/playground/downloads$"
+  },
+  "playground/dropdowns": {
+    "route": "playground/dropdowns",
+    "regex": "^/playground/dropdowns$"
+  },
+  "playground/form": {
+    "route": "playground/form",
+    "regex": "^/playground/form$"
+  },
+  "playground/iframe": {
+    "route": "playground/iframe",
+    "regex": "^/playground/iframe$"
+  },
+  "playground/radio": {
+    "route": "playground/radio",
+    "regex": "^/playground/radio$"
+  },
+  "playground/scroll": {
+    "route": "playground/scroll",
+    "regex": "^/playground/scroll$"
+  },
+  "playground/table": {
+    "route": "playground/table",
+    "regex": "^/playground/table$"
+  },
+  "playground/text": {
+    "route": "playground/text",
+    "regex": "^/playground/text$"
+  },
+  "playground/trigger": {
+    "route": "playground/trigger",
+    "regex": "^/playground/trigger$"
+  },
+  "playground/upload": {
+    "route": "playground/upload",
+    "regex": "^/playground/upload$"
+  }
+}

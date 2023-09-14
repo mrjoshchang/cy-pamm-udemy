@@ -1,0 +1,9 @@
+{
+  "cucumberautocomplete.steps": [
+    "cy-pamm-e2e/cypress/support/step_definitions/**/*.ts",
+    "cy-pamm-e2e/cypress/support/step_definitions/actions/*.ts",
+    "cy-pamm-e2e/cypress/support/step_definitions/assertions/*.ts"
+  ],
+  "cucumberautocomplete.strictGherkinCompletion": true,
+  "eslint.workingDirectories": ["./cy-pamm/tsconfig.json"]
+}

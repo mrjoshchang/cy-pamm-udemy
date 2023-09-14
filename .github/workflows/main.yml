@@ -1,0 +1,50 @@
+name: Cypress Regression Tests
+
+on: push
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 18.16.1
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.16.1
+      - name: 'Build Backend'
+        run: |
+          cd backend
+          npm install
+      - name: 'Build Frontend'
+        run: |
+          cd frontend
+          npm install
+      - name: 'Start Backend and Frontend'
+        run: |
+          cd backend
+          npm start &
+          cd ../frontend
+          npm start &
+      - name: 'Run Cypress UI Tests'
+        run: |
+          cd cy-pamm-e2e
+          npm ci
+          npm run cy:linux:regression
+      - name: 'Run Cypress Components Tests'
+        run: |
+          cd frontend
+          npm run cy:tests
+      - name: 'Upload UI Artifact'
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: Cypress Cucumber Preprocessor HTML Report
+          path: cy-pamm-e2e/cypress/reports/report.html
+          retention-days: 1
+      - name: 'Upload Component Artifact'
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: Cypress Component HTML Report
+          path: frontend/cypress/reports/html/index.html
+          retention-days: 1
